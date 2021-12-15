@@ -16,10 +16,11 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-              $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('author');
             $table->string('type');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
