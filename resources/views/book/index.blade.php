@@ -3,10 +3,9 @@
 @section('content')
 
 <div id="index_wrap">
-    <h1>indexページ</h1>
-        <a href="{{ route('book.new') }}">新作はこちら</a>
-        <a href="{{ route('search') }}">本の検索はこちら</a>
-
+    <h1>取扱書籍一覧(TOP)</h1>
+        <a class="index_link" href="{{ route('book.new') }}">新作はこちら</a>
+        <a class="index_link" href="{{ route('search') }}">本の検索はこちら</a>
     <ul>
     @foreach($books as $book)
     <div class="list_box">
