@@ -8,8 +8,7 @@
   @if(app('env')=='local')
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-  @endif
-  @if(app('env')=='production')
+  @else
   <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
   <link rel="shortcut icon" href="{{ secure_asset('favicon.ico') }}">
   @endif
