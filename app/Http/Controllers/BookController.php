@@ -16,6 +16,7 @@ class BookController extends Controller
     }
     public function home() {
         $books = Book::join('users', 'books.user_id', 'users.id')
+        ->where('books.user_id', 'users.id')
         ->select('users.id','books.title', 'books.author', 'books.type', 'books.image')
         ->simplePaginate(9);
         return view('book.index', compact('books'));
