@@ -12,14 +12,6 @@ use GuzzleHttp\Client;
 class BookController extends Controller
 {
     public function index(Request $request) {
-        if($request->isMethod('post')) {
-            $post_data = $request->all();
-            $data = "https://www.googleapis.com/books/v1/volumes?q=".$post_data["book"];
-            $json = file_get_contents($data);
-            $json_decode = json_decode($json, true);
-            // dd($json_decode);
-            return view('book.home', compact("json_decode"));
-        }
         return view('book.home');
     }
     public function home() {
@@ -34,10 +26,6 @@ class BookController extends Controller
         return view('book.new', compact('books'));
     }
     public function create(Request $request) {
-        $books = Book::join('users', 'books.user_id', 'users.id')
-        ->where('books.user_id', Auth::id())
-        ->select('books.*')
-        ->get();
         if($request->isMethod('post')) {
             $book = $request->input();
             if(!empty($request->file('image'))) {
@@ -59,14 +47,24 @@ class BookController extends Controller
             ]);
             return redirect('book/create');
         }
-        return view('book.create', compact('books'));
+        return view('book.create');
     }
     public function search(Request $request) {
-        if($request->isMethod('post')) {
-            $key = $request->input('search');
-            $books = Book::where('title', 'like', '%'.$key.'%')
-            ->get();
+        if($request->input('a_search')) {
+            $key = $request->input('a_search');
+            $books = Book::join('users', 'books.user_id', 'users.id')
+            ->where('title', 'like', '%'.$key.'%')
+            ->select('users.id','books.title', 'books.author', 'books.type', 'books.image')
+            ->simplePaginate(9);
             return view('book.search', compact('books', 'key'));
+        }
+        if($request->input('b_search')) {
+            $post_data = $request->all();
+            $data = "https://www.googleapis.com/books/v1/volumes?q=".$post_data["b_search"];
+            $json = file_get_contents($data);
+            $json_decode = json_decode($json, true);
+            // dd($json_decode['items']);
+            return view('book.search', compact("json_decode"));
         }
         return view('book.search');
     }

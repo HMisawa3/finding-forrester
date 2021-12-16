@@ -2,7 +2,8 @@
 
 @section('content')
 <div id="index_wrap">
-    <h1>新しい本はこれだ！！！</h1><br>
+    <h1>新しい本はこれだ！！！</h1>
+    <p>過去1ヶ月に入荷した本を表示しています</p><br>
 
     <ul>
     @foreach($books as $book)

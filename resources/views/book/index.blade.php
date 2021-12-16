@@ -4,8 +4,7 @@
 
 <div id="index_wrap">
     <h1>取扱書籍一覧(TOP)</h1>
-        <a class="index_link" href="{{ route('book.new') }}">新作はこちら</a>
-        <a class="index_link" href="{{ route('search') }}">本の検索はこちら</a>
+
     <ul>
     @foreach($books as $book)
     <div class="list_box">
@@ -15,7 +14,6 @@
         <li>{{ $book->author }}</li>
         <label>ジャンル</label>
         <li>{{ $book->type }}</li>
-        <li><a href="{{ route('shop.show', ['shop' => $book->id]) }}">取扱店舗</a></li>
         <div class="index_img">
             <img class="book_img" src="{{ asset('image/'. $book->image) }}" alt="画像が設定されていません">
         </div>
@@ -26,4 +24,5 @@
     {{ $books->links() }}
     </div>
 </div>
+
 @endsection

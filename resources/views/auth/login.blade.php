@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div id="index_wrap">
 <form action="{{ route('login') }}" method="POST">
 @csrf
   <tr>
@@ -15,7 +17,8 @@
         <input type="password" name="password" value="{{ old('password') }}"/>
       </td>
   </tr>
-  <input type="submit" value="ログイン">
+  <button type="submit">ログイン</button>
 </form>
-    <button type="button" onclick="location.href='{{ route('register') }}'">アカウント新規登録</button>
+    <button class="register_button" type="button" onclick="location.href='{{ route('register') }}'">アカウント新規登録</button>
+</div>
 @endsection

@@ -84,6 +84,9 @@ img {
   width: 12vw;
   height: 24vh;
 }
+input{
+  width: 13rem;
+}
 /*----------------------------------
 header
 ----------------------------------*/
@@ -128,6 +131,7 @@ ul {
 }
 
 ul li {
+  width: 11rem;
   line-height: 1.5;
   padding: 0.5em 0;
 }
@@ -138,6 +142,7 @@ ul li {
   padding: 10px 0 5px 15px;
   margin-top: 10px;
   width : 30%;
+  height: 17rem;
 }
 .list_box label {
   border-bottom: solid 0.1rem;
@@ -175,6 +180,45 @@ ul li {
 .submit {
   width: 20%;
 }
+/**************************************************
+6. Login-layout
+***************************************************/
+.register_button {
+  margin-top: 15px;
+}
+/**************************************************
+7. Create-layout
+***************************************************/
+.create_form {
+  width: 50%;
+  margin: 2% auto;
+  min-width: 9rem;
+}
+.create {
+  width: 100%;
+  max-width: 100%;
+  border: solid 0.1rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  background: darken(#f9f9f9, 10%);
+  color: darken(#f9f9f9, 50%);
+}
+.create_button {
+  margin-top: 15px;
+}
+
+/**************************************************
+8. Create-layout
+***************************************************/
+/* .create_wrap input {
+  
+} */
+
+
+
+
+
 /**************************************************
 6. Tab
 ***************************************************/
