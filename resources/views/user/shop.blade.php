@@ -13,7 +13,5 @@
     <p>{{ $shop->tel }}</p>
     <label>営業時間<label>
     <p>{{ $shop->time }}</p>
-    
-    <button type="button" onclick="location.href='{{ route('shop.edit') }}'">編集する</button>
 </div>
 @endsection
