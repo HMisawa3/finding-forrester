@@ -8,7 +8,7 @@
       <button type="button" onclick="location.href='{{ route('search') }}'">書籍検索</button>
       <button type="button" onclick="location.href='{{ route('book.new') }}'">新作CHECK</button>
       <button type="button" onclick="location.href='{{ route('book.create') }}'">本を追加</button>
-      <button type="button" onclick="location.href='{{ route('shop.show', ['shop' => Auth::id()]) }}'">ショップ情報を確認</button>
+      <button type="button" onclick="location.href='{{ route('shop.edit') }}'">ショップ情報を確認</button>
       <button type="button" onclick="location.href='{{ route('logout') }}'">ログアウト</button>
     </div>
   @else
