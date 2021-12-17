@@ -209,15 +209,26 @@ ul li {
 }
 
 /**************************************************
-8. Create-layout
+8. Shop_Create_Form-layout
 ***************************************************/
-/* .create_wrap input {
-  
-} */
-
-
-
-
+.shop_edit_form {
+  width: 50%;
+  margin: 2% auto;
+  min-width: 9rem;
+}
+.shop_edit {
+  width: 100%;
+  max-width: 100%;
+  border: solid 0.1rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  background: darken(#f9f9f9, 10%);
+  color: darken(#f9f9f9, 50%);
+}
+.shop_edit_button {
+  margin-top: 15px;
+}
 
 /**************************************************
 6. Tab
