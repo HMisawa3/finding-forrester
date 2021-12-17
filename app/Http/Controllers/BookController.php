@@ -15,7 +15,7 @@ class BookController extends Controller
         return view('book.home');
     }
     public function home() {
-        $books = Book::leftjoin('users', 'books.user_id', 'users.id')
+        $books = Book::join('users', 'books.user_id', 'users.id')
         ->where('users.id', 'books.user_id')
         ->select('users.id','books.title', 'books.author', 'books.type', 'books.image')
         ->simplePaginate(9);
